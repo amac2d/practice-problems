@@ -24,10 +24,20 @@ function fitWithinVal(array, num){
 }
 
 
-function getAllNamesShorterThan(){
+function getAllNamesShorterThan(array, value){
 
+    var arrayReturn = [];
+    for ( var index = 0 ; index < array.length ; index++) {
+        if (array[index].length < value) {
+            arrayReturn.push(array[index]);
+        }
+    }
+    return arrayReturn;
 }
 
-function makeLabel(){
-
+function makeLabel(obj){
+return obj.greeting + ' ' + obj.givenName + ' ' + obj.familyName + '\n' +
+       obj['home address'].streetNumber + ' ' + obj['home address'].streetName +
+       '\n' + obj['home address'].city + ', ' + obj['home address'].state + ' ' +
+       obj['home address'].zip;
 }
